@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func spawn_fish() -> void:
 	var new_fish: Fish = fish_scene.instantiate()
-	var ypos: float = randf_range(30, 600)
+	var ypos: float = randf_range(100, 1000)
 	new_fish.position = Vector2(30, ypos)
 	
 	new_fish.body_entered.connect(update_score)
