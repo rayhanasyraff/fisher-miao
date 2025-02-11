@@ -18,6 +18,11 @@ func _physics_process(delta):
 		
 	move_and_slide()
 	
+	# Screen clamping
+	var screenSize =  get_viewport().get_visible_rect().size
+	position.x = clamp(position.x, 0 , screenSize.x)
+	position.y = clamp(position.y, 0 , screenSize.y)
+	
 	#var collision = move_and_collide(velocity * delta)
 #
 	#if collision:
