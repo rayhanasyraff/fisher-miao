@@ -11,11 +11,11 @@ script = ExtResource("1_tylst")
 fish_scene = ExtResource("3_f0mdk")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
-offset_left = -37.0
-offset_top = -8.0
-offset_right = 1051.0
-offset_bottom = 1912.0
-scale = Vector2(0.619576, 0.619576)
+offset_left = -167.0
+offset_top = 1.0
+offset_right = 921.0
+offset_bottom = 1921.0
+scale = Vector2(0.665676, 0.632239)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer"]
 layout_mode = 2
@@ -23,14 +23,9 @@ stream = ExtResource("1_c8ghe")
 autoplay = true
 loop = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-z_index = 12
-scale = Vector2(0.958598, 1.00113)
-anchor_mode = 0
-
-[node name="Joystick" parent="Camera2D" instance=ExtResource("5_4atgo")]
-z_index = 12
-position = Vector2(317.13, 646.27)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 601.0
+offset_bottom = 1184.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
@@ -48,5 +43,14 @@ text = "00000"
 [node name="Player" parent="." instance=ExtResource("2_os5f6")]
 z_index = 5
 position = Vector2(320, 438)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 20
+scale = Vector2(0.958598, 1.00113)
+anchor_mode = 0
+
+[node name="Joystick" parent="Camera2D" instance=ExtResource("5_4atgo")]
+z_index = 12
+position = Vector2(68.8505, 1115.74)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

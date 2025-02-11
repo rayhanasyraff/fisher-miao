@@ -12,11 +12,11 @@ script = ExtResource("1_pwy8c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-7.25, 3.33037)
-scale = Vector2(0.267857, 0.267857)
+scale = Vector2(0.587856, 0.587856)
 texture = ExtResource("1_ole86")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.500019, 0.720261)
+position = Vector2(10, 3)
 rotation = 0.432842
-scale = Vector2(1.33019, 1.16104)
+scale = Vector2(3.08741, 2.6948)
 shape = SubResource("CapsuleShape2D_std8k")
