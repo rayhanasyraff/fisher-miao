@@ -14,9 +14,5 @@ func _process(delta: float) -> void:
 	if has_overlapping_bodies():
 		queue_free()
 		
-	if position.x > 330:
+	if position.x > 1000:
 		queue_free()
-
-func _on_VisibleOnScreenNotifier2D_screen_exited():
-	print('hello')
-	queue_free()

@@ -1,27 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceyvhcdrtleds"]
+[gd_scene load_steps=7 format=3 uid="uid://ceyvhcdrtleds"]
 
-[ext_resource type="VideoStream" path="res://assets/underwater-background.ogv" id="1_c8ghe"]
+[ext_resource type="VideoStream" path="res://assets/background/underwater.ogv" id="1_c8ghe"]
 [ext_resource type="Script" path="res://scene/game/game.gd" id="1_tylst"]
-[ext_resource type="PackedScene" uid="uid://1hdglka0trq5" path="res://scene/player/player.tscn" id="2_os5f6"]
+[ext_resource type="PackedScene" uid="uid://bawr2o7qo3t4x" path="res://scene/player/characters/harry-putter.tscn" id="2_os5f6"]
 [ext_resource type="PackedScene" uid="uid://cwpxhkipql4tp" path="res://scene/fish/fish.tscn" id="3_f0mdk"]
 [ext_resource type="PackedScene" uid="uid://dup1bgdyxkwr3" path="res://scene/joystick/joystick.tscn" id="5_4atgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyfxd"]
+size = Vector2(500, 20)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_tylst")
 fish_scene = ExtResource("3_f0mdk")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_left = -1.0
-offset_top = -9.0
-offset_right = 370.0
-offset_bottom = 631.0
-scale = Vector2(0.993626, 1.01283)
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+offset_left = -167.0
+offset_top = 1.0
+offset_right = 921.0
+offset_bottom = 1921.0
+scale = Vector2(0.665676, 0.632239)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+layout_mode = 2
 stream = ExtResource("1_c8ghe")
 autoplay = true
 loop = true
 
-[node name="Player" parent="." instance=ExtResource("2_os5f6")]
-position = Vector2(182, 319)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 601.0
+offset_bottom = 1184.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
@@ -37,11 +44,25 @@ theme_override_font_sizes/font_size = 34
 text = "00000"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(183, 318)
+z_index = 20
 scale = Vector2(0.958598, 1.00113)
+anchor_mode = 0
 
 [node name="Joystick" parent="Camera2D" instance=ExtResource("5_4atgo")]
 z_index = 12
-position = Vector2(121.01, 247.72)
+position = Vector2(68.8505, 1115.74)
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(0, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(250, -11)
+scale = Vector2(1, 1.39161)
+shape = SubResource("RectangleShape2D_qyfxd")
+
+[node name="Player" parent="." instance=ExtResource("2_os5f6")]
+position = Vector2(225, 348)
+scale = Vector2(1.08, 1.08)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
