@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bawr2o7qo3t4x"]
+
+[ext_resource type="Script" path="res://scene/player/player.gd" id="1_pwy8c"]
+[ext_resource type="Texture2D" uid="uid://q8jx3fwekx0a" path="res://assets/player/harry-putter-spritesheet.png" id="2_i6gul"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp7vr"]
+atlas = ExtResource("2_i6gul")
+region = Rect2(0, 0, 2500, 3508)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kctks"]
+atlas = ExtResource("2_i6gul")
+region = Rect2(2500, 0, 2500, 3508)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_20yaa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp7vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kctks")
+}],
+"loop": true,
+"name": &"paddling",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_std8k"]
+radius = 12.1003
+height = 58.539
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_pwy8c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, -4)
+scale = Vector2(0.0656992, 0.0656992)
+sprite_frames = SubResource("SpriteFrames_20yaa")
+animation = &"paddling"
+autoplay = "paddling"
+frame_progress = 0.611458
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 3)
+rotation = 0.432842
+scale = Vector2(3.08741, 2.6948)
+shape = SubResource("CapsuleShape2D_std8k")

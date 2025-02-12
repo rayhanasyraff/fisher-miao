@@ -2,7 +2,7 @@
 
 [ext_resource type="VideoStream" path="res://assets/background/underwater.ogv" id="1_c8ghe"]
 [ext_resource type="Script" path="res://scene/game/game.gd" id="1_tylst"]
-[ext_resource type="PackedScene" uid="uid://1hdglka0trq5" path="res://scene/player/player.tscn" id="2_os5f6"]
+[ext_resource type="PackedScene" uid="uid://bawr2o7qo3t4x" path="res://scene/player/characters/harry-putter.tscn" id="2_os5f6"]
 [ext_resource type="PackedScene" uid="uid://cwpxhkipql4tp" path="res://scene/fish/fish.tscn" id="3_f0mdk"]
 [ext_resource type="PackedScene" uid="uid://dup1bgdyxkwr3" path="res://scene/joystick/joystick.tscn" id="5_4atgo"]
 
@@ -43,10 +43,6 @@ offset_bottom = 86.0
 theme_override_font_sizes/font_size = 34
 text = "00000"
 
-[node name="Player" parent="." instance=ExtResource("2_os5f6")]
-z_index = 5
-position = Vector2(320, 438)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 20
 scale = Vector2(0.958598, 1.00113)
@@ -64,5 +60,9 @@ position = Vector2(0, 4)
 position = Vector2(250, -11)
 scale = Vector2(1, 1.39161)
 shape = SubResource("RectangleShape2D_qyfxd")
+
+[node name="Player" parent="." instance=ExtResource("2_os5f6")]
+position = Vector2(225, 348)
+scale = Vector2(1.08, 1.08)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
