@@ -38,7 +38,7 @@ scale = Vector2(0.0656992, 0.0656992)
 sprite_frames = SubResource("SpriteFrames_20yaa")
 animation = &"paddling"
 autoplay = "paddling"
-frame_progress = 0.611458
+frame_progress = 0.398509
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(10, 3)
