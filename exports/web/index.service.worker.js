@@ -4,7 +4,11 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
+<<<<<<< HEAD
 const CACHE_VERSION = '1739377257|7267653729';
+=======
+const CACHE_VERSION = '1739722268|2691946887';
+>>>>>>> dev
 /** @type {string} */
 const CACHE_PREFIX = 'FisherMiao-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
