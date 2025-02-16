@@ -38,10 +38,20 @@ scale = Vector2(0.0656992, 0.0656992)
 sprite_frames = SubResource("SpriteFrames_20yaa")
 animation = &"paddling"
 autoplay = "paddling"
-frame_progress = 0.611458
+frame_progress = 0.398509
+
+[node name="Button" type="Button" parent="AnimatedSprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -594.0
+offset_top = -1233.0
+offset_right = 1081.0
+offset_bottom = 1674.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(10, 3)
 rotation = 0.432842
 scale = Vector2(3.08741, 2.6948)
 shape = SubResource("CapsuleShape2D_std8k")
+
+[connection signal="button_down" from="AnimatedSprite2D/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="AnimatedSprite2D/Button" to="." method="_on_button_button_up"]

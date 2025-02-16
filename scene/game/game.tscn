@@ -48,7 +48,12 @@ z_index = 20
 scale = Vector2(0.958598, 1.00113)
 anchor_mode = 0
 
+[node name="Player" parent="Camera2D" instance=ExtResource("2_os5f6")]
+position = Vector2(187.774, 354.599)
+scale = Vector2(1.04319, 0.998871)
+
 [node name="Joystick" parent="Camera2D" instance=ExtResource("5_4atgo")]
+visible = false
 z_index = 12
 position = Vector2(68.8505, 1115.74)
 
@@ -60,9 +65,5 @@ position = Vector2(0, 4)
 position = Vector2(250, -11)
 scale = Vector2(1, 1.39161)
 shape = SubResource("RectangleShape2D_qyfxd")
-
-[node name="Player" parent="." instance=ExtResource("2_os5f6")]
-position = Vector2(225, 348)
-scale = Vector2(1.08, 1.08)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

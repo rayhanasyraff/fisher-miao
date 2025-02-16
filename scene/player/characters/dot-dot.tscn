@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bawr2o7qo3t4x"]
+[gd_scene load_steps=4 format=3 uid="uid://dq4ay8l6x8l0f"]
 
 [ext_resource type="Script" path="res://scene/player/player.gd" id="1_780nn"]
 [ext_resource type="Texture2D" uid="uid://ckvxmgt1te372" path="res://assets/player/harry-putter-2.png" id="2_ctv1w"]
@@ -12,7 +12,7 @@ script = ExtResource("1_780nn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-7.25, 3.33037)
-scale = Vector2(0.587856, 0.587856)
+scale = Vector2(0.0678578, 0.0678578)
 texture = ExtResource("2_ctv1w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
